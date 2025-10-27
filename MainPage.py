@@ -9,13 +9,15 @@ class MainPage:
 
     def __init__(self, driver: WebDriver) -> None:
         self.__driver = driver
-
-    @allure.step("Получить текущий URL")
-    def get_current_url(self) -> str:
-        return self.__driver.current_url
+        """
+        Конструктор класса MainPage.
+        """
 
     @allure.step("Открыть меню авторизованного пользователя")
     def open_menu(self):
+        """
+        Осуществляет поиск и открытие меню авторизованного пользователя.
+        """
         self.__driver.find_element(By.XPATH,
                                    '//*[@id="app"]/div/header'
                                    '/div[1]/div/div/div/div[2]'
@@ -26,8 +28,20 @@ class MainPage:
                                    '/div[2]/div[1]/div/div'
                                    '/div[2]/a[1]').click()
 
-    @allure.step("Прочитать информацию о пользователе")
-    def get_account_info(self) -> list[str]:
+    @allure.step("Прочитать информацию о пользователе"
+                 "{expected_name}:{expected_email}")
+    def get_account_info(self, expected_name: str,
+                         expected_email: str) -> list[str]:
+        """
+        Осуществляет поиск и ожидание видимости информации об
+        авторизованном пользователе, а также считывание и возвращение
+        данной информации (Ф.И.О., email)
+        :param: __driver: int время задержки в секундах
+        :return: str - текст Ф.И.О., email авторизованного пользователя.
+        :param expected_name: ожидаемое Ф.И.О.
+        :param expected_email: ожидаемый email
+        :return: [name, email]
+        """
         (WebDriverWait(self.__driver, 10).
          until(EC.visibility_of_element_located((By.XPATH,
                                                  '//*[@id="app"]'
@@ -45,4 +59,9 @@ class MainPage:
 
         name = F_n_L_n.text
         email = field_email.text
+
+        # Проверка соответствия данных
+        assert name == expected_name
+        assert email == expected_email
+
         return [name, email]
