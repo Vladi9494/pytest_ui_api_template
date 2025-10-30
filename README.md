@@ -38,11 +38,36 @@ pytest_ui_api_template.git'
 - pip install webdriver-manager
 - pip install allure-pytest
 - pip install requests
-- pip install pytest-playwright
-
-# pytest_ui_api_template
+- pip install pytest-playwright 
 
 # Документация проекта
+
+# pytest_ui_api_template
+-config
+    - .gitignore
+    - conf.ini
+    - conftest.py
+    - DataProvided.py
+    - pytest.ini
+    - test_config.ini
+    - test_data.json
+- page
+     - AuthPage.py
+     - MainPage.py
+     - Search_1toursPage.py
+     - Search_2toursPage.py
+     - Search_3toursPage.py
+     - Search_4toursPage.py
+- test
+    - api
+          - funsun_test.py
+    - ui 
+          - auth_test.py
+          - search_1test.py
+          - search_2test.py
+          - search_3test.py
+          - search_4test.py
+- README.md          
 
 ## Описание базового синтаксиса записи и форматирования
 
@@ -61,12 +86,22 @@ pytest_ui_api_template.git'
  для улучшения читаемости отчетов.
 
 ---
+## Инстукция по запуску тестов для отладки (из директории где находятся тесты)
 
+1. Команда для запуска отдельного теста например auth_test.py
+```python -m pytest auth_test.py
+```
+2. Команда для запуска всех тестов
+```python -m pytest
+```
 ## Инструкция по запуску тестов для формирования отчета Allure
  
 1. Эта команда запустит все тесты и сохранит результаты в директорию "allure-result"
 (появляется папка "allure-result"):
- ```python -m pytest --alluredir=allure-result
+ ```python -m pytest --alluredir allure-result 
+ ```
+2. Эта команда для запуска тестов 
+ ```python -m pytest -s -v
  ```
 
 ## Инструкция по просмотру сформированного отчета Allure
@@ -78,7 +113,10 @@ pytest_ui_api_template.git'
 2.  эта команда генерирует результат в отчёт (появляется папка "allure-report"): 
  ```allure generate allure-result
  ```
-3. С помощью этой команды можно просмотреть отчёт:
+3. Эта команда для генерации отчета
+ ```allure gnerate allure files -o allure-report
+ ```
+4. С помощью этой команды можно просмотреть отчёт:
  ```allure open allure-report
  ```
  В отчете Allure вы увидите:
@@ -98,8 +136,6 @@ pytest_ui_api_template.git'
          - Ввод данных поиска поля "Дата вылета".
          - Ввод данных поиска поля "Количество ночей".
          - Ввод данных поиска поля "Кто едет".
-     - Нажатие кнопки "Найти"
-     
+     - Нажатие кнопки "Найти"     
 
    - **Результат**: Успешное выполнение или ошибка с указанием ожидаемого и фактического результата.
-
