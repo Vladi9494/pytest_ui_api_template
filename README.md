@@ -102,19 +102,24 @@ pytest_ui_api_template.git'
 ```python -m pytest --alluredir allure-result
 ```
 
-3. Эта команда для запуска тестов: ```python -m pytest -s -v```
+3. Эта команда для запуска тестов:                                                                                                                                       ```python -m pytest -s -v
+```
 
 
 ## Инструкция по просмотру сформированного отчета Allure
 
 1. Эта команда запустит локальный сервер, конвертирует результат в отчёт
-   и откроет отчет в браузере: ```allure serve allure-result```
+   и откроет отчет в браузере:                                                                                                                                       ```allure serve allure-result
+```
 
-2.  эта команда генерирует результат в отчёт (появляется папка "allure-report"):```allure generate allure-result```
+3.  эта команда генерирует результат в отчёт (появляется папка "allure-report"):                                                                                     ```allure generate allure-result
+```
 
-3. Эта команда для генерации отчета: ```allure gnerate allure files -o allure-report```
+5. Эта команда для генерации отчета:                                                                                                                                 ```allure gnerate allure files -o allure-report
+```
 
-4. С помощью этой команды можно просмотреть отчёт: ```allure open allure-report```
+6. С помощью этой команды можно просмотреть отчёт:                                                                                                                   ```allure open allure-report
+```
 
  В отчете Allure вы увидите:
    - **Название теста**: `Тестирование сайта туроператора FUN&SUN`.
