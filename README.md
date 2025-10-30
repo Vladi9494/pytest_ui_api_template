@@ -92,33 +92,28 @@ pytest_ui_api_template.git'
 ```python -m pytest auth_test.py
 ```
 2. Команда для запуска всех тестов
+
 ```python -m pytest
 ```
 ## Инструкция по запуску тестов для формирования отчета Allure
  
 1. Эта команда запустит все тесты и сохранит результаты в директорию "allure-result"
-(появляется папка "allure-result"):
- ```python -m pytest --alluredir allure-result 
- ```
-2. Эта команда для запуска тестов 
- ```python -m pytest -s -v
- ```
+(появляется папка "allure-result"): ```python -m pytest --alluredir allure-result```
+
+2. Эта команда для запуска тестов: ```python -m pytest -s -v```
+
 
 ## Инструкция по просмотру сформированного отчета Allure
 
 1. Эта команда запустит локальный сервер, конвертирует результат в отчёт
-   и откроет отчет в браузере:
- ```allure serve allure-result
- ```
-2.  эта команда генерирует результат в отчёт (появляется папка "allure-report"): 
- ```allure generate allure-result
- ```
-3. Эта команда для генерации отчета
- ```allure gnerate allure files -o allure-report
- ```
-4. С помощью этой команды можно просмотреть отчёт:
- ```allure open allure-report
- ```
+   и откроет отчет в браузере: ```allure serve allure-result```
+
+2.  эта команда генерирует результат в отчёт (появляется папка "allure-report"):```allure generate allure-result```
+
+3. Эта команда для генерации отчета: ```allure gnerate allure files -o allure-report```
+
+4. С помощью этой команды можно просмотреть отчёт: ```allure open allure-report```
+
  В отчете Allure вы увидите:
    - **Название теста**: `Тестирование сайта туроператора FUN&SUN`.
    - **Описание теста**: Тест проверяет корректность работы сайта FUN&SUN
