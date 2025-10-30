@@ -98,9 +98,11 @@ pytest_ui_api_template.git'
 ## Инструкция по запуску тестов для формирования отчета Allure
  
 1. Эта команда запустит все тесты и сохранит результаты в директорию "allure-result"
-(появляется папка "allure-result"): ```python -m pytest --alluredir allure-result```
+(появляется папка "allure-result"):
+```python -m pytest --alluredir allure-result
+```
 
-2. Эта команда для запуска тестов: ```python -m pytest -s -v```
+3. Эта команда для запуска тестов: ```python -m pytest -s -v```
 
 
 ## Инструкция по просмотру сформированного отчета Allure
